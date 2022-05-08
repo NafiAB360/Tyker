@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- APlayer CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+    
+    <title>Tyker</title>
+    <style>
+        body{
+            background-color: #f7f7f7;
+            font-family: 'Open Sans',
+        }
+        img{
+            width: 100%;
+            min-height: 250px;
+        }
+        .main{
+            padding: 40px 0;
+        }
+        .col-md-3{
+            margin-bottom: 40px;
+        }
+        .album-poster{
+            transition: all ease 0.4s;
+            position: relative;
+            display: block;
+            border-radius: 7px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px #3d2173a1
+        }
+        .album-poster:hover{
+            box-shadow: none;
+            transform: scale(0.98) translateY(5px);
+        }
+        h3{
+            font-size: 34px;
+            margin-bottom: 34px;
+            border-bottom: 4px solid #e6e6e6;
+            padding-bottom: 15px;
+        }
+        p{
+            font-size: 15px;
+        }
+        h4{
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            font-weight: 700;
+        }
+
+
+        /*defult is hide music player*/
+        #aplayer{
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            box-shadow: 0 -2px 2px #dadada;
+            background-color: #fff;
+            transition: all ease 0.5s;
+        }
+        #aplayer.showPlayer{
+            bottom: 0
+        }
+
+        /*MUSIC PLAYER CUSTOMIZING STYLE*/
+		span{
+			color: #000 !important;
+			font-size: 16px;
+		}
+		.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded{
+			background: #e0e0e0;
+    		height: 4px;
+		}
+		.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played{
+			height: 4px;
+			background-color: #2196F3 !important;
+		}
+		.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb{
+			background-color: #2196F3 !important;
+		}
+
+		.aplayer .aplayer-icon{
+			width: 20px;
+			height: 20px;
+		}
+		.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+		    fill: #000;
+		}
+		.aplayer .aplayer-info .aplayer-music{
+			margin-bottom: 5px;
+		}
+
+    </style>
+    <link rel="tyker" href="Tyker Icon.png">
+  </head>
+  <body>
+
+<div class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Trending</h3>
+            </div>
+            <div class="col-md-3">
+                <a href="javascript:void();" class="album-poster" data-switch="0">
+                    <img src="https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png" alt="">
+                </a>
+                <h4>Never Gonna Give You Up</h4>
+                <p>Rick Astley</p>
+            </div>
+            <div class="col-md-3">
+                <a href="javascript:void();" class="album-poster" data-switch="1">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNzg0YWZjYTAtNzk4OS00MWY5LWJkNDUtYWJmZGQ2YWEzY2I0XkEyXkFqcGdeQXVyMTE2NTA4MzQ1._V1_FMjpg_UX1000_.jpg" alt="">
+                </a>
+                <h4>رامز موفي ستار</h4>
+                <p>رامز جلال</p>
+            </div>
+            <div class="col-md-3">
+                <a href="javascript:void();" class="album-poster" data-switch="2">
+                    <img src="https://i.ytimg.com/vi/orJSJGHjBLI/maxresdefault.jpg" alt="">
+                </a>
+                <h4>Bad Habits</h4>
+                <p>Ed Sheeran</p>
+            </div>
+            <div class="col-md-3">
+                <a href="javascript:void();" class="album-poster" data-switch="3">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/e/ed/PumpedUpKicks.jpg" alt="">
+                </a>
+                <h4>Pumped Up Kicks</h4>
+                <p>Foster The People</p>
+            </div>
+            <div class="col-md-3">
+                <a href="javascript:void();" class="album-poster" data-switch="4">
+                    <img src="https://i1.sndcdn.com/artworks-qitI99oHtfT5jD0n-4sbcrg-t500x500.jpg" alt="">
+                </a>
+                <h4>Muffin Song</h4>
+                <p>BadBoyHalo</p>
+            </div>
+            <div class="col-md-3">
+                <a href="javascript:void();" class="album-poster" data-switch="5">
+                    <img src="https://i1.sndcdn.com/artworks-4f5f98d1-fd61-4ad9-ae8f-bc75137585b4-0-t500x500.jpg" alt="">
+                </a>
+                <h4>Baby, I'm Yours</h4>
+                <p>Breakbot</p>
+            </div>
+            <div class="col-md-3">
+                <a href="javascript:void();" class="album-poster" data-switch="6">
+                    <img src="https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce" alt="">
+                </a>
+                <h4>Bad Guy</h4>
+                <p>Billie Ellish</p>
+            </div>
+            <div class="col-md-3">
+                <a href="javascript:void();" class="album-poster" data-switch="7">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/8/82/Let%27sGetReadytoRhumble.jpg" alt="">
+                </a>
+                <h4>Let's Get Ready To Rhumble</h4>
+                <p>PJ & Duncan</p>
+            </div>
+        
+        </div>
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Coming Soon</h3>
+        </div>
+        <div class="col-md-2">
+            <a href="#" class="album-poster">
+                <img src="https://upload.wikimedia.org/wikipedia/en/2/23/Pharrell_Williams_-_Happy.jpg" alt="">
+            </a>
+            <h4>Happy</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="#" class="album-poster">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Havana_%28featuring_Young_Thug%29_%28Official_Single_Cover%29_by_Camila_Cabello.png" alt="">
+            </a>
+            <h4>Havana</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="#" class="album-poster">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b4/Shape_Of_You_%28Official_Single_Cover%29_by_Ed_Sheeran.png" alt="">
+            </a>
+            <h4>Shape Of You</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="#" class="album-poster">
+                <img src="https://i.ytimg.com/vi/XEBkCr_0kXU/maxresdefault.jpg" alt="">
+            </a>
+            <h4>Her Şey Seninle Güzel Arkadaşım!</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="#" class="album-poster">
+                <img src="https://i.scdn.co/image/ab67616d0000b273eb7eb2f32a39d1f994bbf68d" alt="">
+            </a>
+            <h4>The Street Performer</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="#" class="album-poster">
+                <img src="https://media.elcinema.com/uploads/_315x420_33646c2e46671aaee1390244d2be556b4a3e8d4de229be1b11da37e9acef7f31.jpg" alt="">
+            </a>
+            <h4>رامز بيلعب بالنار</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="#" class="album-poster">
+                <img src="https://upload.wikimedia.org/wikipedia/en/1/16/We%27re_on_the_Ball.jpg" alt="">
+            </a>
+            <h4>We're On The Ball</h4>
+        </div>
+        <div class="col-md-2">
+            <a href="#" class="album-poster">
+                <img src="https://c418.org/wp-content/uploads/2016/05/a3390257927_10.jpg" alt="">
+            </a>
+            <h4>Minecraft C418</h4>
+        </div>
+        
+    </div>
+    
+    
+    </div>
+</div>
+<div id="aplayer"></div>
+
+    <!-- Jquery Link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <!-- Bootstrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- APlayer Jquery Link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+    <script>
+
+
+        // NOW I CLICK ALBUM POSTER TO GET CURRENT SONG ID
+        $(".album-poster").on('click', function(e){
+            var dataSwitchID = $(this).attr('data-switch');
+            //console.log(dataSwitchID);
+
+            // and now I use aplayer switch function see
+            ap.list.switch(dataSwitchID); //this is static ID but I use dynamic
+            // aplayer play function
+            //when I click any song to play
+            ap.play();
+
+            // click to slideUp player see
+            $("#aplayer").addClass('showPlayer');
+        });
+
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            listFolded: true,
+            audio: [
+                {
+                name: 'Never Gonna Give You Up',
+                artist: 'Rick Astley',
+                url: 'Never Gonna Give You Up.mp3',
+                cover: 'https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png',
+            },
+            {
+                name: 'رامز موفي ستار',
+                artist: 'رامز جلال',
+                url: 'رامز موفي ستار.mp3',
+                cover: 'https://m.media-amazon.com/images/M/MV5BNzg0YWZjYTAtNzk4OS00MWY5LWJkNDUtYWJmZGQ2YWEzY2I0XkEyXkFqcGdeQXVyMTE2NTA4MzQ1._V1_FMjpg_UX1000_.jpg',
+            },
+            {
+                name: 'Bad Habits',
+                artist: 'Ed Sheeran',
+                url: 'Bad Habits.mp3',
+                cover: 'https://i.ytimg.com/vi/orJSJGHjBLI/maxresdefault.jpg',
+            },
+            {
+                name: 'Pumped Up Kicks',
+                artist: 'Foster The People',
+                url: 'Pumped Up Kicks.mp3',
+                cover: 'https://upload.wikimedia.org/wikipedia/en/e/ed/PumpedUpKicks.jpg',
+            },
+            {
+                name: 'Muffin Song',
+                artist: 'BadBoyHalo',
+                url: 'Muffin Song.mp3',
+                cover: 'https://i1.sndcdn.com/artworks-qitI99oHtfT5jD0n-4sbcrg-t500x500.jpg',
+            },
+            {
+                name: 'Baby Im Yours',
+                artist: 'Breakbot',
+                url: 'Baby Im Yours.mp3',
+                cover: 'https://i1.sndcdn.com/artworks-4f5f98d1-fd61-4ad9-ae8f-bc75137585b4-0-t500x500.jpg',
+            },
+            {
+                name: 'Bad Guy',
+                artist: 'Billie Ellish',
+                url: 'Bad Guy.mp3',
+                cover: 'https://i.scdn.co/image/ab67616d0000b27350a3147b4edd7701a876c6ce',
+            },
+            {
+                name: 'Lets Get Ready To Rhumble',
+                artist: 'PJ & Duncan',
+                url: 'Lets Get Ready to Rhumble.mp3',
+                cover: 'https://upload.wikimedia.org/wikipedia/en/8/82/Let%27sGetReadytoRhumble.jpg',
+            },
+
+            
+            ]
+        });
+    </script>
+
+  </body>
+</html>
